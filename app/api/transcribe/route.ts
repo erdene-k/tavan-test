@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { SpeechClient } from '@google-cloud/speech';
 
 const speechClient = new SpeechClient({
-  projectId: process.env.GOOGLE_PROJECT_API!, ,
+  projectId: process.env.GOOGLE_PROJECT_API!,
   key: process.env.GOOGLE_API_KEY!,
 }
 );
