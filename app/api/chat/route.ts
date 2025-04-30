@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
       
       IMPORTANT: ONLY provide information that directly answers the user's question. Do NOT include branch locations, contact information, or payment details unless specifically asked about them.
 
-      If relevant, recommend users to download the PayOn app for registration via the App Store or Google Play.
+      If relevant, recommend users to download the PayOn app for registration or etc.
 
       Use the following information when necessary:
 

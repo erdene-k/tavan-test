@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
         content: audioContent,
       },
       config: {
-        languageCode: language,
+        languageCode: 'mn-MN',
         encoding: 'WEBM_OPUS',
         sampleRateHertz: 48000,
         audioChannelCount: 1,
