@@ -3,8 +3,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { SpeechClient } from '@google-cloud/speech';
 
 const speechClient = new SpeechClient({
-  client_email: process.env.GOOGLE_CLIENT_EMAIL,
-  private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+  key:'AIzaSyD1cX_GGSmCk6LXmu0nisE1HMTe7C7XSsI',
+  projectId:'fintech-415909'
 }
 );
 
