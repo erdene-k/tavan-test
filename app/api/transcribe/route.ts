@@ -6,7 +6,7 @@ const credentials = JSON.parse(process.env.GOOGLE_KEY_JSON!); // You must string
 
 const speechClient = new SpeechClient({
   credentials,
-  projectId: process.env.GOOGLE_PROJECT_ID,
+  projectId: process.env.GOOGLE_PROJECT_ID!,
 }
 );
 
