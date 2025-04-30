@@ -2,14 +2,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SpeechClient } from '@google-cloud/speech';
 
+const credentials = JSON.parse(process.env.GOOGLE_KEY_JSON!); // You must stringify the full service account JSON and store it in an env variable
+
 const speechClient = new SpeechClient({
-  key: process.env.GOOGLE_KEY,
+  credentials,
   projectId: process.env.GOOGLE_PROJECT_ID,
 }
 );
 
 export async function POST(req: NextRequest) {
   try {
+
     const formData = await req.formData();
     const audioFile = formData.get('audio') as File;
 

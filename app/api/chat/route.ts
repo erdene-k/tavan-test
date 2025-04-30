@@ -128,7 +128,7 @@ export async function POST(req: NextRequest) {
       messages: anthropicMessages,
     });
 
-    console.log(response);
+
     return NextResponse.json({ message: response.content[0].text });
   } catch (error) {
     console.error("Error in chat route:", error);

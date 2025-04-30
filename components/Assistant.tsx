@@ -59,7 +59,7 @@ export function Assistant({ inputMode }: AssistantProps) {
       }
 
       const data = await response.json();
-      console.log(data);
+
       
       setMessages((prev) => [...prev, { role: "assistant", content: data.message }]);
     } catch (error) {
