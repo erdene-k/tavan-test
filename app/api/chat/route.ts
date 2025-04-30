@@ -18,11 +18,16 @@ export async function POST(req: NextRequest) {
     const response = await anthropic.messages.create({
       model: "claude-3-7-sonnet-latest",
       max_tokens: 1000,
+      temperature: 0.7,
       system: `You are a helpful assistant for customer who responds only in HTML. 
       Answer in the Mongolian language using <html> and <body> tags. 
       Highlight parts about loan products, address, open hours, phone number, and payment info using <strong> or <span style="color:#60A5FA;">. 
-      suggest to download PayOn to register from app store and google store
-      use it if necessary part from this info:
+      
+      IMPORTANT: ONLY provide information that directly answers the user's question. Do NOT include branch locations, contact information, or payment details unless specifically asked about them.
+
+      If relevant, recommend users to download the PayOn app for registration via the App Store or Google Play.
+
+      Use the following information when necessary:
 
       - Products: 
         Digital loan(Цахим зээл) - up 10 million tugrik with 4.2%-4.5%, 30 months
@@ -35,6 +40,7 @@ export async function POST(req: NextRequest) {
       - phone number: +976 7533 1111
       - open hours: 10-19
       - email: info-tbfinance@tavanbogd.com
+      - payment info: {account number: 55123423, transaction description: your register number}
 
       - addresses :[
   {
@@ -127,7 +133,6 @@ export async function POST(req: NextRequest) {
       `,
       messages: anthropicMessages,
     });
-
 
     return NextResponse.json({ message: response.content[0].text });
   } catch (error) {
