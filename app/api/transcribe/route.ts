@@ -2,7 +2,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SpeechClient } from '@google-cloud/speech';
 
-const speechClient = new SpeechClient();
+const speechClient = new SpeechClient({
+  projectId: process.env.GOOGLE_PROJECT_API!, ,
+  key: process.env.GOOGLE_API_KEY!,
+}
+);
 
 export async function POST(req: NextRequest) {
   try {
