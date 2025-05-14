@@ -1,4 +1,3 @@
-// File: src/types/Message.ts
 export enum MessageType {
     USER = 'user',
     ASSISTANT = 'assistant',
